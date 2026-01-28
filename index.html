@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIVisionTechnology | Industrial AI & Computer Vision Solutions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="AIVisionTechnology: Industrial AI solutions for surface inspection, OHS safety, automotive detection, and medical PCB maintenance. High-tech vision intelligence.">
+    <meta name="keywords"
+        content="AI Vision Technology, Industrial AI, Computer Vision, Surface Inspection, OHS Safety, Medical PCB Repair">
+    <meta name="author" content="AIVisionTechnology">
+    <meta name="robots" content="index, follow">
+
+    <!-- WhatsApp & Social Media (Open Graph) -->
+    <meta property="og:site_name" content="AIVisionTechnology">
+    <meta property="og:title" content="AIVisionTechnology | Industrial AI & Vision Intelligence">
+    <meta property="og:description"
+        content="Pioneering industrial safety and quality through world-class AI engineering and vision systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aivistechnology.com/">
+    <meta property="og:image" content="https://aivistechnology.com/aivischtech.png">
+    <meta property="og:image:secure_url" content="https://aivistechnology.com/aivischtech.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AIVisionTechnology | Industrial AI & Vision Intelligence">
+    <meta name="twitter:description"
+        content="Pioneering industrial safety and quality through world-class AI engineering and vision systems.">
+    <meta name="twitter:image" content="https://aivistechnology.com/aivischtech.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="aivischtech.png">
+    <link rel="apple-touch-icon" href="aivischtech.png">
+
+    <link rel="canonical" href="https://aivistechnology.com/">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AIVisionTechnology",
+      "url": "https://aivistechnology.com/",
+      "logo": "https://aivistechnology.com/aivischtech.png",
+      "description": "Industrial AI & Computer Vision Engineering Hub providing automated inspection and OHS safety systems.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-506-987-5757",
+        "contactType": "sales",
+        "email": "info@aivistechnology.com"
+      }
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #10b981;
+            --bg-dark: #070b14;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            image-rendering: -webkit-optimize-contrast;
+            /* Enhance image sharpness */
+        }
+
+        .img-sharp {
+            image-rendering: -webkit-optimize-contrast;
+            transform: translateZ(0);
+            /* Hardware acceleration */
+            filter: contrast(1.05) brightness(1.02);
+            /* Subtle sharpening effect */
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+        }
+
+        .video-overlay {
+            background: linear-gradient(to bottom, rgba(7, 11, 20, 0.85), rgba(7, 11, 20, 0.65));
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .tech-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(37, 99, 235, 0.5);
+            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 30%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes scan {
+
+            0%,
+            100% {
+                top: 0%
+            }
+
+            50% {
+                top: 100%
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+
+        .brand-marker {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 5rem;
+            height: 80px;
+            white-space: nowrap;
+        }
+
+        .brand-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            /* Show original brand colors with subtle opacity */
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .brand-marker:hover .brand-logo {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .brand-marker:hover .brand-name {
+            color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+
+<body class="text-slate-200 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 py-3 md:py-5 transition-all duration-300 glass border-b-0">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 md:gap-4">
+                <img src="aivischtech.png" alt="AIVisionTechnology Industrial AI Logo"
+                    class="h-8 md:h-12 w-auto img-sharp">
+                <div class="flex flex-col">
+                    <span
+                        class="text-sm md:text-2xl font-bold tracking-tight text-white leading-none">AIVisionTechnology</span>
+                    <span class="text-[10px] text-blue-500 font-bold tracking-[0.2em] uppercase mt-1"
+                        data-i18n="nav-sub">Industrial Intelligence</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 md:gap-6">
+                <div class="hidden lg:flex items-center space-x-12">
+                    <a href="#stability"
+                        class="relative nav-link text-xs font-bold hover:text-white transition-colors uppercase tracking-widest text-slate-400"
+                        data-i18n="nav-stability">Stability</a>
+                    <a href="#projects"
+                        class="relative nav-link text-xs font-bold hover:text-white transition-colors uppercase tracking-widest text-slate-400"
+                        data-i18n="nav-projects">Projects</a>
+                    <a href="#competencies"
+                        class="relative nav-link text-xs font-bold hover:text-white transition-colors uppercase tracking-widest text-slate-400"
+                        data-i18n="nav-expertise">Expertise</a>
+                </div>
+
+                <!-- Language Switcher (Always Visible) -->
+                <div class="flex items-center gap-2 border-l border-white/10 pl-2 md:pl-10">
+                    <button onclick="setLang('en')"
+                        class="group flex items-center transition-opacity hover:opacity-100 opacity-60 lang-btn-en">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="English Language Flag"
+                            class="w-6 md:w-8 h-auto rounded shadow-sm">
+                        <span class="text-[10px] md:text-xs font-black tracking-widest">EN</span>
+                    </button>
+                    <button onclick="setLang('tr')"
+                        class="lang-btn-tr flex items-center gap-1.5 md:gap-2 opacity-40 hover:opacity-100 transition-opacity">
+                        <img src="https://flagcdn.com/w40/tr.png" alt="Turkish Language Flag"
+                            class="w-6 md:w-8 h-auto rounded shadow-sm">
+                        <span class="text-[10px] md:text-xs font-black tracking-widest">TR</span>
+                    </button>
+                </div>
+
+                <a href="#contact"
+                    class="px-3 py-2 md:px-7 md:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-[10px] md:text-xs font-black transition-all shadow-xl shadow-blue-500/30 uppercase tracking-tighter whitespace-nowrap"
+                    data-i18n="nav-proposal">Get Proposal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-30">
+                <source src="142.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 video-overlay"></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl px-6 text-center">
+            <div
+                class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-10 tracking-[0.3em] uppercase">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+                </span>
+                <span data-i18n="hero-tag">Advanced Computer Vision Engineering</span>
+            </div>
+            <h1 class="text-6xl md:text-9xl font-extrabold mb-8 leading-[0.9] tracking-tighter gradient-text"
+                data-i18n="hero-title">
+                Vision Beyond <br> <span class="text-blue-600">Human Efficiency</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-slate-400 mb-14 max-w-4xl mx-auto font-light leading-relaxed"
+                data-i18n="hero-desc">
+                AIVisionTechnology delivers end-to-end industrial AI solutions, from automated surface inspection to
+                AI-powered
+                occupational safety systems.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-8">
+                <a href="#projects"
+                    class="px-12 py-5 bg-blue-600 hover:bg-blue-700 rounded-2xl text-lg font-black transition-all shadow-2xl shadow-blue-500/40 flex items-center justify-center gap-3 group">
+                    <span data-i18n="hero-cta-projects">View Our Projects</span> <i
+                        class="fas fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+                </a>
+                <a href="#competencies"
+                    class="px-12 py-5 glass hover:bg-white/5 rounded-2xl text-lg font-black transition-all border border-white/10 flex items-center justify-center gap-3">
+                    <span data-i18n="hero-cta-expertise">Our Expertise</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-4" data-i18n="projects-tag">Case
+                    Studies</h2>
+                <h3 class="text-4xl md:text-6xl font-bold text-white mb-8" data-i18n="projects-title">Industrial AI in
+                    Action</h3>
+                <div class="h-1 w-24 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-32">
+                <!-- Project 1: Surface Inspection -->
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2 order-2 lg:order-1">
+                        <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold mb-6 tracking-widest uppercase border border-blue-500/20"
+                            data-i18n="p1-tag">
+                            Quality Control</div>
+                        <h4 class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white" data-i18n="p1-title">
+                            End-to-End Automatic
+                            <br>Surface Defect Inspection
+                        </h4>
+                        <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="p1-desc">
+                            We designed a deep learning-based machine vision system specifically for the automotive
+                            industry. This end-to-end solution provides real-time detection of scratches, dents, and
+                            paint irregularities with superhuman precision.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">DEEP
+                                LEARNING</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">REAL-TIME
+                                INFERENCE</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">AUTOMOTIVE
+                                QA</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 order-1 lg:order-2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                <img src="surface_defect_auto.jpg"
+                                    alt="Industrial AI Surface Defect Inspection Automotive" loading="lazy"
+                                    class="w-full h-full object-cover img-sharp hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                <img src="zero_defect_ui.png" alt="AI Quality Control Zero-Defect Interface"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover img-sharp hover:scale-110 transition-transform duration-700">
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-slate-500 mt-4 text-center uppercase tracking-widest">Real-time
+                            Automated Inspection & Result Interface</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: OHS Docking -->
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2">
+                        <div
+                            class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-emerald-900/10">
+                            <img src="loading_zone_realtime.png" alt="Smart Loading Zone AI Monitoring Real-time"
+                                loading="lazy"
+                                class="w-full h-auto img-sharp hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-500 text-xs font-bold mb-6 tracking-widest uppercase border border-emerald-500/20"
+                            data-i18n="p2-tag">
+                            Occupational Safety (OHS)</div>
+                        <h4 class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white" data-i18n="p2-title">
+                            Smart Loading Zone
+                            <br>Safety Recognition
+                        </h4>
+                        <p class="text-lg text-slate-400 mb-8 leading-relaxed text-balance" data-i18n="p2-desc">
+                            Ensuring safety in critical loading/unloading areas. Our system recognizes humans,
+                            forklifts, and trucks in real-time. During docking, the system transmits a live,
+                            location-aware video feed directly to the driver's tablet, synchronized via wireless
+                            telemetry.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300 font-medium">
+                                <i class="fas fa-check-circle text-emerald-500"></i> Human & Forklift Recognition
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300 font-medium">
+                                <i class="fas fa-check-circle text-emerald-500"></i> Real-time Wireless Video Transfer
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-300 font-medium">
+                                <i class="fas fa-check-circle text-emerald-500"></i> Integrated Warning Buzzer Systems
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 3: Crane Safety -->
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2 order-2 lg:order-1">
+                        <div class="inline-block px-4 py-1 rounded-full bg-orange-500/10 text-orange-500 text-xs font-bold mb-6 tracking-widest uppercase border border-orange-500/20"
+                            data-i18n="p3-tag">
+                            Industrial Safety</div>
+                        <h4 class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white" data-i18n="p3-title">
+                            AI-Powered Crane
+                            <br>Safety Recognition
+                        </h4>
+                        <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="p3-desc">
+                            A proactive safety system for overhead factory cranes. Using high-speed AI detection, the
+                            system monitors worker proximity during crane transport. If any personnel enter the safety
+                            zone, the system automatically halts operation and triggers environmental buzzer alerts.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">PROXIMITY
+                                DETECTION</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">AUTO-HALT
+                                SYSTEM</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">AUDIBLE
+                                WARNINGS</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 order-1 lg:order-2">
+                        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-orange-900/20">
+                            <img src="crane_safety.jpg" alt="AI Factory Crane Safety Proximity Detection System"
+                                loading="lazy"
+                                class="w-full h-auto img-sharp hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Fusebox Detection -->
+                <div class="glass p-12 md:p-20 rounded-[60px] relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 h-64 w-64 bg-blue-600/10 blur-3xl rounded-full"></div>
+                    <div class="flex flex-col lg:flex-row items-center gap-16">
+                        <div class="lg:w-1/2">
+                            <h4 class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white"
+                                data-i18n="p4-title">Automotive
+                                <br>Fusebox Detection
+                            </h4>
+                            <p class="text-lg text-slate-400 mb-10 leading-relaxed" data-i18n="p4-desc">
+                                High-speed AI-based detection for automotive electrical systems. We ensure that every
+                                fuse is correctly placed and seated, reducing manufacturing errors at the assembly line
+                                level.
+                            </p>
+                            <a href="#contact"
+                                class="inline-flex items-center gap-3 text-blue-400 font-bold hover:text-blue-300 transition-colors">
+                                <span data-i18n="p-learn-more">LEARN MORE ABOUT THIS PROJECT</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="lg:w-1/2 relative group">
+                            <div class="rounded-2xl overflow-hidden border border-white/5 shadow-2xl relative">
+                                <div class="mb-8 overflow-hidden rounded-2xl h-48 border border-white/5 relative">
+                                    <img src="medical_pcb_maintenance.png" loading="lazy"
+                                        class="w-full h-full object-cover img-sharp transition-transform duration-700 group-hover:scale-110"
+                                        alt="Dental Unit Medical PCB Repair Services">
+                                    <div class="absolute inset-0 bg-orange-600/10 opacity-40"></div>
+                                </div>
+                                <img src="fusebox_detection_ai.png" loading="lazy"
+                                    class="w-full h-auto img-sharp transition-transform duration-700 group-hover:scale-110"
+                                    alt="Automotive AI Fusebox Detection Inspection System">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent opacity-60">
+                                </div>
+                                <!-- Scanning Line Animation -->
+                                <div
+                                    class="absolute top-0 left-0 w-full h-1 bg-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.8)] animate-[scan_3s_ease-in-out_infinite] z-20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Vein Imaging & ID Recognition -->
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2">
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4 h-96">
+                            <div
+                                class="rounded-2xl overflow-hidden border border-white/5 shadow-xl transition-transform hover:scale-105 duration-500">
+                                <img src="vein_imaging_medical.png" class="w-full h-full object-cover img-sharp"
+                                    alt="Medical Vein Imaging NIR System" loading="lazy">
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-white/5 shadow-xl transition-transform hover:scale-105 duration-500">
+                                <img src="vein_auth_system.png" class="w-full h-full object-cover img-sharp"
+                                    alt="Contactless Biometric ID Authentication AI" loading="lazy">
+                            </div>
+                            <div
+                                class="rounded-2xl overflow-hidden border border-white/5 shadow-xl col-span-2 transition-transform hover:scale-105 duration-500">
+                                <img src="vein_deep_learning.png" class="w-full h-full object-cover img-sharp"
+                                    alt="Deep Learning Vascular Pattern Recognition" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold mb-6 tracking-widest uppercase border border-blue-500/20"
+                            data-i18n="p5-tag">
+                            Medical & Biometrics</div>
+                        <h4 class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white" data-i18n="p5-title">
+                            Vein Imaging &
+                            <br>ID Recognition System
+                        </h4>
+                        <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="p5-desc">
+                            A dual-mode NIR (Near Infrared Imaging) system. Phase 1 provides enhanced vein visibility
+                            for medical procedures in challenging patient groups. Phase 2 implements a fully contactless
+                            biometric authentication system using deep learning to recognize subcutaneous vascular
+                            patterns.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">NIR IMAGING</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">BIOMETRIC
+                                IDENTIFICATION</span>
+                            <span class="px-4 py-2 glass rounded-lg text-xs font-bold text-slate-300">MEDICAL AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global Ecosystem & Standards Section -->
+                <section class="py-20 overflow-hidden relative border-y border-white/5 bg-black/40">
+                    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+                        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold mb-6 tracking-[0.3em] uppercase"
+                            data-i18n="brands-tag">
+                            Industrial Ecosystem
+                        </div>
+                        <h3 class="text-3xl md:text-5xl font-bold text-white mb-6" data-i18n="brands-title">Engineered
+                            for Global Ecosystems</h3>
+                        <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+                            data-i18n="brands-desc">
+                            Our systems are precision-engineered to integrate seamlessly with the production standards
+                            and operational protocols of global industry leaders.
+                        </p>
+                    </div>
+
+                    <div class="relative flex overflow-hidden">
+                        <div class="marquee-content py-10">
+                            <!-- Loop 1 -->
+                            <div class="brand-marker">
+                                <img src="logo_toyota.png" class="brand-logo" alt="Toyota" loading="lazy">
+                                <span class="brand-name">TOYOTA</span>
+                            </div>
+                            <div class="brand-marker">
+                                <img src="logo_reysas.png" class="brand-logo" alt="Reysaş" loading="lazy">
+                                <span class="brand-name">REYSAŞ</span>
+                            </div>
+                            <div class="brand-marker">
+                                <img src="logo_barsan.png" class="brand-logo" alt="Barsan" loading="lazy">
+                                <span class="brand-name">BARSAN</span>
+                            </div>
+                            <!-- Loop 2 -->
+                            <div class="brand-marker">
+                                <img src="logo_toyota.png" class="brand-logo" alt="Toyota" loading="lazy">
+                                <span class="brand-name">TOYOTA</span>
+                            </div>
+                            <div class="brand-marker">
+                                <img src="logo_reysas.png" class="brand-logo" alt="Reysaş" loading="lazy">
+                                <span class="brand-name">REYSAŞ</span>
+                            </div>
+                            <div class="brand-marker">
+                                <img src="logo_barsan.png" class="brand-logo" alt="Barsan" loading="lazy">
+                                <span class="brand-name">BARSAN</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#070b14] to-transparent z-10">
+                        </div>
+                        <div
+                            class="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#070b14] to-transparent z-10">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Competencies / Expertise -->
+                <section id="competencies" class="py-32 bg-white/[0.02]">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="text-center mb-24">
+                            <h2 class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-4"
+                                data-i18n="exp-tag">Global
+                                Capabilities</h2>
+                            <h3 class="text-4xl md:text-6xl font-bold text-white mb-8" data-i18n="exp-title">Our Core
+                                Expertise</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Image Processing -->
+                            <div class="tech-card p-10 rounded-[32px] glass flex flex-col h-full">
+                                <div
+                                    class="h-16 w-16 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400 text-3xl mb-8">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h5 class="text-xl font-bold text-white mb-4" data-i18n="exp1-title">Image Processing
+                                </h5>
+                                <p class="text-slate-400 leading-relaxed text-sm" data-i18n="exp1-desc">Advanced
+                                    computer vision algorithms designed for multi-layered object recognition and
+                                    industrial pattern matching.</p>
+                            </div>
+
+                            <!-- OHS Systems -->
+                            <div class="tech-card p-10 rounded-[32px] glass flex flex-col h-full">
+                                <div
+                                    class="h-16 w-16 rounded-2xl bg-emerald-600/20 flex items-center justify-center text-emerald-400 text-3xl mb-8">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h5 class="text-xl font-bold text-white mb-4" data-i18n="exp2-title">OHS Systems</h5>
+                                <p class="text-slate-400 leading-relaxed text-sm" data-i18n="exp2-desc">Proactive
+                                    proximity detection and danger-zone monitoring to prevent industrial accidents
+                                    before they happen.</p>
+                            </div>
+
+                            <!-- Quality Control -->
+                            <div class="tech-card p-10 rounded-[32px] glass flex flex-col h-full">
+                                <div
+                                    class="h-16 w-16 rounded-2xl bg-indigo-600/20 flex items-center justify-center text-indigo-400 text-3xl mb-8">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h5 class="text-xl font-bold text-white mb-4" data-i18n="exp3-title">Quality Control
+                                </h5>
+                                <p class="text-slate-400 leading-relaxed text-sm" data-i18n="exp3-desc">Neural network
+                                    integration into production lines for zero-defect output and automated pass/fail
+                                    categorization.</p>
+                            </div>
+
+                            <!-- Wireless Transfer -->
+                            <div class="tech-card p-10 rounded-[32px] glass flex flex-col h-full">
+                                <div
+                                    class="h-16 w-16 rounded-2xl bg-purple-600/20 flex items-center justify-center text-purple-400 text-3xl mb-8">
+                                    <i class="fas fa-satellite-dish"></i>
+                                </div>
+                                <h5 class="text-xl font-bold text-white mb-4" data-i18n="exp4-title">Wireless Transfer
+                                </h5>
+                                <p class="text-slate-400 leading-relaxed text-sm" data-i18n="exp4-desc">Uninterrupted
+                                    real-time telemetry and industrial wireless infrastructure for high-bandwidth data
+                                    transmission.</p>
+                            </div>
+
+                            <!-- Medical & PCB Support -->
+                            <div
+                                class="tech-card p-10 rounded-[32px] glass flex flex-col h-full lg:col-span-1 md:col-span-1">
+                                <div
+                                    class="h-16 w-16 rounded-2xl bg-orange-600/20 flex items-center justify-center text-orange-400 text-3xl mb-8">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <h5 class="text-xl font-bold text-white mb-4" data-i18n="exp5-title">Medical & PCB
+                                    Support
+                                </h5>
+                                <p class="text-slate-400 leading-relaxed text-sm" data-i18n="exp5-desc">Professional
+                                    dental unit revision and high-precision electronic board (PCB) repair services for
+                                    medical and industrial hardware.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </section>
+
+    <!-- Logo Showcase -->
+    <section class="py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-500 uppercase tracking-widest text-xs font-bold mb-12">Built with Industry Standards
+            </p>
+            <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 grayscale items-center">
+                <span class="text-xl font-bold">NVIDIA JETSON</span>
+                <span class="text-xl font-bold">PYTHON</span>
+                <span class="text-xl font-bold">PyTORCH</span>
+                <span class="text-xl font-bold">OPENCV</span>
+                <span class="text-xl font-bold">TensorRT</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
+                <div>
+                    <div class="flex items-center gap-5 mb-10">
+                        <img src="aivischtech.png" alt="AIVisionTechnology White Logo" class="h-14 w-auto img-sharp">
+                        <span class="text-4xl font-black text-white tracking-tighter">AIVisionTechnology</span>
+                    </div>
+                    <p class="text-slate-400 text-xl max-w-lg leading-relaxed mb-12" data-i18n="footer-desc">
+                        Pioneering industrial safety and quality through world-class AI engineering and vision systems.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#"
+                            class="h-12 w-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="h-12 w-12 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:items-end">
+                    <h4 class="text-blue-500 font-black uppercase tracking-[0.2em] text-xs mb-8" data-i18n="footer-cta">
+                        Work With Us</h4>
+                    <a href="mailto:info@aivistechnology.com"
+                        class="text-3xl md:text-5xl font-light text-white hover:text-blue-500 transition-colors break-words mb-4 block">info@aivistechnology.com</a>
+                    <a href="https://wa.me/905069875757" target="_blank"
+                        class="h-16 w-16 rounded-full glass flex items-center justify-center text-emerald-400 text-3xl hover:bg-emerald-500/10 transition-all hover:scale-110 shadow-lg shadow-emerald-500/20">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <div class="mt-8 text-slate-500 font-bold uppercase tracking-widest text-sm" data-i18n="footer-tag">
+                        Industrial Vision Engineering Hub</div>
+                    <div class="mt-2 text-slate-600 text-sm" data-i18n="footer-location">Istanbul, Turkiye</div>
+                </div>
+            </div>
+            <div
+                class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-600 text-xs font-bold uppercase tracking-widest">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                    <p data-i18n="footer-copy">&copy; 2026 AIVisionTechnology Global. Engineered for Stability.</p>
+                    <!-- Visitor Counters -->
+                    <div class="flex items-center gap-4">
+                        <div id="daily-visitor-badge"
+                            class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10"
+                            style="display: none;">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-[10px] text-slate-500" data-i18n="footer-daily-visitors">Daily
+                                Visitors</span>
+                            <span id="daily-visitor-count" class="text-[10px] text-white font-mono">...</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                            <span class="text-[10px] text-slate-500" data-i18n="footer-visitors">Total Visitors</span>
+                            <span id="visitor-count" class="text-[10px] text-white font-mono">...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-12">
+                    <a href="#projects"
+                        class="text-sm font-bold hover:text-blue-500 transition-colors tracking-widest uppercase"
+                        title="View Our Industrial AI Projects" data-i18n="nav-projects">Projects</a>
+                    <a href="#competencies"
+                        class="text-sm font-bold hover:text-blue-500 transition-colors tracking-widest uppercase"
+                        title="Our Core AI Expertise" data-i18n="nav-expertise">Expertise</a>
+                    <a href="#contact"
+                        class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-sm font-black transition-all shadow-lg shadow-blue-500/20 uppercase tracking-widest"
+                        title="Contact Us for a Proposal" data-i18n="nav-proposal">Get Proposal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'tr': {
+                'nav-sub': 'Endüstriyel Zeka',
+                'nav-stability': 'Kararlılık',
+                'nav-projects': 'Projeler',
+                'nav-expertise': 'Uzmanlık',
+                'nav-proposal': 'Teklif Al',
+                'hero-tag': 'İleri Bilgisayarlı Görü Mühendisliği',
+                'hero-title': 'İnsan Verimliliğinin <br> <span class="text-blue-600">Ötesinde Vizyon</span>',
+                'hero-desc': 'AIVisionTechnology, otonom yüzey kontrolünden AI destekli iş güvenliği sistemlerine kadar uçtan uca endüstriyel yapay zeka çözümleri sunar.',
+                'hero-cta-projects': 'Projelerimizi İnceleyin',
+                'hero-cta-expertise': 'Uzmanlık Alanlarımız',
+                'projects-tag': 'Vaka Çalışmaları',
+                'projects-title': 'Endüstriyel AI Uygulamada',
+                'p1-tag': 'Kalite Kontrol',
+                'p1-title': 'Uçtan Uca Otomatik <br>Yüzey Kusur Denetimi',
+                'p1-desc': 'Otomotiv endüstrisi için özel, derin öğrenme tabanlı bir makine vizyon sistemi tasarladık. Bu çözüm; çizik, ezik ve boya kusurlarını gerçek zamanlı ve yüksek hassasiyetle tespit eder.',
+                'p2-tag': 'İş Sağlığı ve Güvenliği (İSG)',
+                'p2-title': 'Akıllı Yükleme Alanı <br>Güvenlik Tanıma',
+                'p2-desc': 'Kritik yükleme/boşaltma alanlarında güvenliği sağlıyoruz. Sistemimiz insan, forklift ve tırları gerçek zamanlı tanır. Yanaşma anında canlı video akışını sürücü tabletine kablosuz aktarır.',
+                'p3-tag': 'Endüstriyel Güvenlik',
+                'p3-title': 'AI Destekli Vinç <br>Güvenlik Tanıma',
+                'p3-desc': 'Fabrika içi tavan vinçleri için proaktif güvenlik sistemi. Yüksek hızlı AI tespitiyle personel mesafesi izlenir. Güvenli bölge ihlalinde vinç otomatik durur ve sesli uyarı verir.',
+                'p4-title': 'Otomotiv <br>Sigorta Kutusu Kontrolü',
+                'p4-desc': 'Elektriksel sistemler için yüksek hızlı AI tespiti. Her sigortanın doğru yerleşimini ve montajını kontrol ederek üretim hattı hatalarını minimize ediyoruz.',
+                'p5-tag': 'Medikal & Biyometri',
+                'p5-title': 'Damar Görüntüleme & <br>ID Tanıma Sistemi',
+                'p5-desc': 'Çift modlu NIR görüntüleme sistemi. Faz 1: Zorlu hasta gruplarında tıbbi işlemler için damar görünürlüğünü artırır. Faz 2: El damar örüntülerinden temassız kimlik doğrulama sağlar.',
+                'p-learn-more': 'BU PROJE HAKKINDA BİLGİ ALIN',
+                'exp-tag': 'Küresel Yetkinlikler',
+                'exp-title': 'Uzmanlık Alanlarımız',
+                'exp1-title': 'Görüntü İşleme',
+                'exp1-desc': 'Endüstriyel örüntü eşleştirme ve çok katmanlı nesne tanıma için tasarlanmış gelişmiş algoritmalar.',
+                'exp2-title': 'İSG Sistemleri',
+                'exp2-desc': 'İş kazalarını önlemek için proaktif mesafe algılama ve tehlikeli bölge izleme sistemleri.',
+                'exp3-title': 'Kalite Kontrol',
+                'exp3-desc': 'Sıfır hata çıktısı için üretim hatlarına entegre edilmiş derin sinir ağları ve otomatik sınıflandırma.',
+                'exp4-title': 'Kablosuz Veri Aktarımı',
+                'exp4-desc': 'Yüksek bant genişliğine sahip endüstriyel kablosuz altyapı ve gerçek zamanlı kesintisiz telemetri.',
+                'exp5-title': 'Medikal & Elektronik Bakım',
+                'exp5-desc': 'Diş üniteleri için profesyonel revizyon ve bakım hizmetleri ile endüstriyel elektronik kartların yüksek hassasiyetli tamiri.',
+                'brands-tag': 'Endüstriyel Ekosistem',
+                'brands-title': 'Dünya Devlerinin Güvendiği Teknoloji',
+                'brands-desc': 'Sistemlerimiz; Toyota, Reysaş ve Barsan gibi sektör liderlerinin operasyonel mükemmellik hedeflerine eşlik eden yüksek mühendislik standartlarıyla donatılmıştır.',
+                'footer-desc': 'Dünya standartlarında AI mühendisliği ve görüntü işleme sistemleriyle endüstriyel güvenlik ve kalitede öncülük ediyoruz.',
+                'footer-cta': 'Birlikte Çalışalım',
+                'footer-tag': 'Endüstriyel Vizyon Mühendislik Merkezi',
+                'footer-location': 'İstanbul, Türkiye',
+                'footer-copy': '&copy; 2026 AIVisionTechnology Global. İstikrar için Tasarlandı.',
+                'footer-visitors': 'Toplam Ziyaretçi',
+                'footer-daily-visitors': 'Bugünkü Ziyaretçi'
+            },
+            'en': {
+                'nav-sub': 'Industrial Intelligence',
+                'nav-stability': 'Stability',
+                'nav-projects': 'Projects',
+                'nav-expertise': 'Expertise',
+                'nav-proposal': 'Get Proposal',
+                'hero-tag': 'Advanced Computer Vision Engineering',
+                'hero-title': 'Vision Beyond <br> <span class="text-blue-600">Human Efficiency</span>',
+                'hero-desc': 'AIVisionTechnology delivers end-to-end industrial AI solutions, from automated surface inspection to AI-powered occupational safety systems.',
+                'hero-cta-projects': 'View Our Projects',
+                'hero-cta-expertise': 'Our Expertise',
+                'projects-tag': 'Case Studies',
+                'projects-title': 'Industrial AI in Action',
+                'p1-tag': 'Quality Control',
+                'p1-title': 'End-to-End Automatic <br>Surface Defect Inspection',
+                'p1-desc': 'We designed a deep learning-based machine vision system specifically for the automotive industry. This end-to-end solution provides real-time detection of scratches, dents, and paint irregularities with superhuman precision.',
+                'p2-tag': 'Occupational Safety (OHS)',
+                'p2-title': 'Smart Loading Zone <br>Safety Recognition',
+                'p2-desc': 'Ensuring safety in critical loading/unloading areas. Our system recognizes humans, forklifts, and trucks in real-time. During docking, the system transmits a live video feed directly to the driver\'s tablet.',
+                'p3-tag': 'Industrial Safety',
+                'p3-title': 'AI-Powered Crane <br>Safety Recognition',
+                'p3-desc': 'A proactive safety system for overhead factory cranes. Using high-speed AI detection, the system monitors worker proximity. If any personnel enter the safety zone, the system halts and triggers alerts.',
+                'p4-title': 'Automotive <br>Fusebox Detection',
+                'p4-desc': 'High-speed AI-based detection for automotive electrical systems. We ensure that every fuse is correctly placed and seated, reducing manufacturing errors at the assembly line level.',
+                'p5-tag': 'Medical & Biometrics',
+                'p5-title': 'Vein Imaging & <br>ID Recognition System',
+                'p5-desc': 'A dual-mode NIR system. Phase 1 provides enhanced vein visibility for medical procedures. Phase 2 implements fully contactless biometric authentication using deep learning vascular patterns.',
+                'p-learn-more': 'LEARN MORE ABOUT THIS PROJECT',
+                'exp-tag': 'Global Capabilities',
+                'exp-title': 'Our Core Expertise',
+                'exp1-title': 'Image Processing',
+                'exp1-desc': 'Advanced computer vision algorithms designed for multi-layered object recognition and industrial pattern matching.',
+                'exp2-title': 'OHS Systems',
+                'exp2-desc': 'Proactive proximity detection and danger-zone monitoring to prevent industrial accidents before they happen.',
+                'exp3-title': 'Quality Control',
+                'exp3-desc': 'Neural network integration into production lines for zero-defect output and automated pass/fail categorization.',
+                'exp4-title': 'Wireless Transfer',
+                'exp4-desc': 'Uninterrupted real-time telemetry and industrial wireless infrastructure for high-bandwidth data transmission.',
+                'exp5-title': 'Medical & PCB Support',
+                'exp5-desc': 'Professional dental unit revision and high-precision electronic board (PCB) repair services for medical and industrial hardware.',
+                'brands-tag': 'Industrial Ecosystem',
+                'brands-title': 'Powering Excellence for World-Class Partners',
+                'brands-desc': 'Our vision systems are engineered to meet the rigorous quality and safety protocols of global industry leaders, ensuring peak operational performance.',
+                'footer-desc': 'Pioneering industrial safety and quality through world-class AI engineering and vision systems.',
+                'footer-cta': 'Work With Us',
+                'footer-tag': 'Industrial Vision Engineering Hub',
+                'footer-location': 'Istanbul, Turkiye',
+                'footer-copy': '&copy; 2026 AIVisionTechnology Global. Engineered for Stability.',
+                'footer-visitors': 'Total Visitors',
+                'footer-daily-visitors': 'Daily Visitors'
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update button styles
+            document.querySelectorAll('.lang-btn-en, .lang-btn-tr').forEach(btn => {
+                btn.classList.add('opacity-40');
+                btn.classList.remove('opacity-100');
+            });
+            const activeBtn = document.querySelector(`.lang-btn-${lang}`);
+            if (activeBtn) {
+                activeBtn.classList.add('opacity-100');
+                activeBtn.classList.remove('opacity-40');
+            }
+
+            localStorage.setItem('preferred_lang', lang);
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize translation & Visitor Counter
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'en';
+            setLang(savedLang);
+
+            // Visitor Counter Logic
+            const today = new Date().toLocaleDateString();
+            const lastVisitDate = localStorage.getItem('last_visit_date');
+
+            let totalVisits = parseInt(localStorage.getItem('site_visits') || '1248');
+            let dailyVisits = parseInt(localStorage.getItem('daily_visits') || '42');
+
+            if (lastVisitDate !== today) {
+                // New day - reset daily counter
+                localStorage.setItem('last_visit_date', today);
+                dailyVisits = 1;
+                totalVisits++;
+                localStorage.setItem('site_visits', totalVisits);
+                localStorage.setItem('daily_visits', dailyVisits);
+                sessionStorage.setItem('session_visited', 'true');
+            } else if (!sessionStorage.getItem('session_visited')) {
+                // Same day, but new session
+                totalVisits++;
+                dailyVisits++;
+                localStorage.setItem('site_visits', totalVisits);
+                localStorage.setItem('daily_visits', dailyVisits);
+                sessionStorage.setItem('session_visited', 'true');
+            }
+
+            document.getElementById('visitor-count').innerText = totalVisits.toLocaleString();
+            document.getElementById('daily-visitor-count').innerText = dailyVisits.toLocaleString();
+
+            // Admin Mode Logic
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('admin') === 'true' || localStorage.getItem('admin_mode') === 'true') {
+                document.getElementById('daily-visitor-badge').style.display = 'flex';
+                localStorage.setItem('admin_mode', 'true');
+            }
+        });
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'shadow-2xl');
+                nav.classList.remove('py-5');
+                nav.style.background = 'rgba(7, 11, 20, 0.95)';
+            } else {
+                nav.classList.add('py-5');
+                nav.classList.remove('py-4', 'shadow-2xl');
+                nav.style.background = 'rgba(255, 255, 255, 0.02)';
+            }
+        });
+    </script>
+</body>
+
+</html>
